@@ -11,10 +11,12 @@ h1 {
     margin: 0;
     padding: 0;
     width: 100px;
+    font-size: 20px;
 }
 #nav-bar li a{
     display: block;
-    color: black;
+    color: white;
+    font-family: helvetica;
     text-decoration: none;
     padding: 14px 20px;
   }
