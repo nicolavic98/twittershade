@@ -17,6 +17,8 @@
 import jinja2
 import os
 import webapp2
+import io
+import json
 import twitter
 
 jinja_environment = jinja2.Environment(
