@@ -17,7 +17,7 @@
 import jinja2
 import os
 import webapp2
-import twitter
+
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
