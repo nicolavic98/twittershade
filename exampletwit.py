@@ -1,7 +1,7 @@
 # twitter
 import io
 import json
-import twitter
+import twitter  
 
 
 # XXX: Go to http://twitter.com/apps/new to create an app and get values
