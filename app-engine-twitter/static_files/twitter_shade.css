@@ -16,7 +16,7 @@ h1 {
 #nav-bar li a{
     display: block;
     color: white;
-    font-family: helvetica;
+    font-family: helvetica, cursive;
     text-decoration: none;
     padding: 14px 20px;
   }
