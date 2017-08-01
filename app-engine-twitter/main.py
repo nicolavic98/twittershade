@@ -23,7 +23,6 @@ import twitter
 
 
 
-=======
 
 
 jinja_environment = jinja2.Environment(
