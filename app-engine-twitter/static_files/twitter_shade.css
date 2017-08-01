@@ -34,7 +34,7 @@ h1 {
     background-color: #cce6ff;
     border-radius: 20px;
   }
-div#Tweet  {
+#Tweet  {
   margin: 0;
   padding: 0;
   border-radius: 20px;
@@ -45,7 +45,7 @@ div#Tweet  {
   height: 200px;
   line-height: 200px;
 }
-div#Response  {
+#Response  {
   margin: 0;
   padding: 0;
   border-radius: 20px;
