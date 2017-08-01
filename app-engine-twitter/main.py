@@ -51,10 +51,10 @@ class TwitterHandler(webapp2.RequestHandler):
         # on Twitter's OAuth implementation.
 
 
-        CONSUMER_KEY = 'NaSlN5bA7hhc2RVChraHRJr2h'
-        CONSUMER_SECRET = 'SuUX64fEW0OuQpHGRjTWvadlyDTg3yXtvyxk3zsXZnpnA7vTWX'
-        OAUTH_TOKEN = '803517278-2JANsR8XTW6ZTgcIPwRLstgf9kRu1CVFxknPzxce'
-        OAUTH_TOKEN_SECRET = 'VFzfYcw0FYn9RFnG3MQomcLsES8lV3AJCJW0MEZpj7Sea'
+        CONSUMER_KEY = 'RNGs9JfBd1dkwnGwkU5vZUGEa'
+        CONSUMER_SECRET = 'cfIYI2x9bi3KBUMTY0NpjfWiZazIQiQY68HAZ3LBAp9qxQFxML'
+        OAUTH_TOKEN = '775098653262254080-IOtUeLlET52C0e8T8ALAjlOXPkXuatl'
+        OAUTH_TOKEN_SECRET = 'FGp9Mr0T4TOjrpPCUVJqqCNVknUyGsI0HFtCui5TVtNMH'
 
         # The keyword query
         #QUERY = 'donald'

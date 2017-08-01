@@ -1,4 +1,10 @@
+.header {
+}
+#logo {
+  float:left;
+}
  h1 {
+  display: inline;
   font-family: 'Londrina Shadow', cursive;
   font-style: italic;
   text-align: center;
@@ -6,8 +12,8 @@
   color: #ccccff;
   margin: 10px 0 0 0;
 }
-
 #nav-bar {
+    float: right;
     list-style-type: none;
     margin: 0;
     padding: 0;
