@@ -17,13 +17,10 @@
 import jinja2
 import os
 import webapp2
-<<<<<<< HEAD
-=======
 import io
 import json
 import twitter
 
->>>>>>> 3b6dd86d5e0cda3ae7066676153f391704a685bc
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
