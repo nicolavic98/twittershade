@@ -59,7 +59,7 @@ class TwitterHandler(webapp2.RequestHandler):
         OAUTH_TOKEN_SECRET = 'VFzfYcw0FYn9RFnG3MQomcLsES8lV3AJCJW0MEZpj7Sea'
 
         # The keyword query
-        QUERY = 'big'
+        QUERY = 'donald'
 
         # The file to write output as newline-delimited JSON documents
         OUT_FILE = QUERY + ".json"
@@ -68,12 +68,22 @@ class TwitterHandler(webapp2.RequestHandler):
         # Authenticate to Twitter with OAuth
 
         auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
-            # Create a connection to the Streaming API
+
+        # Create a connection to the Streaming API
 
         twitter_stream = twitter.TwitterStream(auth=auth)
 
 
         self.response.write('Filtering the public timeline for "{0}"'.format(QUERY))
+
+        stream = twitter_stream.statuses.filter(track=QUERY)
+
+        # Write one tweet per line as a JSON document.
+
+        with io.open(OUT_FILE, 'w', encoding='utf-8', buffering=1) as f:
+            for tweet in stream:
+                f.write(unicode(u'{0}\n'.format(json.dumps(tweet, ensure_ascii=False))))
+                self.response.write(tweet['text'])
 
 
 
