@@ -19,8 +19,8 @@ import os
 import webapp2
 import io
 import json
-import twitter
-from exampletwit import Query
+# import twitter
+#from exampletwit import Query
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
