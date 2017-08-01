@@ -6,7 +6,7 @@ h1 {
   color: #ccccff;
   margin: 10px 0 0 0;
 }
-
+/*nav bar */
 #nav-bar {
     list-style-type: none;
     margin: 0;
@@ -24,8 +24,11 @@ h1 {
     text-decoration: none;
     padding: 14px 20px;
   }
-
 #nav-bar li a:hover {
     background-color: #cce6ff;
     border-radius: 20px;
   }
+
+#Response {
+
+}
