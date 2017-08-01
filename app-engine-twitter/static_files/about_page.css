@@ -1,1 +1,31 @@
- 
+ h1 {
+  font-family: 'Londrina Shadow', cursive;
+  font-style: italic;
+  text-align: center;
+  font-size: 75px;
+  color: #ccccff;
+  margin: 10px 0 0 0;
+}
+
+#nav-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    width: 100px;
+    font-size: 20px;
+    background-color: #66b3ff;
+}
+#nav-bar li a{
+    display: block;
+    color: white;
+    font-family: helvetica;
+    font-style: italic;
+    text-decoration: none;
+    padding: 14px 20px;
+  }
+
+#nav-bar li a:hover {
+    background-color: #cce6ff;
+    border-radius: 20px;
+  }
