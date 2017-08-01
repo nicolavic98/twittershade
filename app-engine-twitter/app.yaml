@@ -22,3 +22,5 @@ libraries:
   version: latest
 - name: ssl
   version: latest
+- name: twitter
+  version: latest

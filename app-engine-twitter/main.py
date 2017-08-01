@@ -21,6 +21,16 @@ import json
 import io
 import twitter
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+#import twitter
+#from exampletwit import Query
+>>>>>>> dba059813bff9e4f20073c8dc1fc3d19603e378b
+>>>>>>> ee0d7b19af98ccc4a17d34cab9f43e67e4dfa043
+>>>>>>> 6952956e9f7ea9f18a68bd19cb84e4c81104fb51
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
