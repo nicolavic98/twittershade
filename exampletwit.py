@@ -22,7 +22,7 @@ OAUTH_TOKEN_SECRET = 'VFzfYcw0FYn9RFnG3MQomcLsES8lV3AJCJW0MEZpj7Sea'
 
 # The keyword query
 
-QUERY = 'big'
+QUERY = 'lebron james'
 
 # The file to write output as newline-delimited JSON documents
 OUT_FILE = QUERY + ".json"
