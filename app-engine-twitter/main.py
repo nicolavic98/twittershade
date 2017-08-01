@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+import jinja2
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
