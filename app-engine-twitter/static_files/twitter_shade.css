@@ -1,5 +1,6 @@
 h1 {
   font-family: 'Londrina Shadow', cursive;
+  font-style: italic;
   text-align: center;
   font-size: 75px;
   color: #ccccff;
@@ -10,8 +11,10 @@ h1 {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    border-radius: 20px;
     width: 100px;
     font-size: 20px;
+    background-color: black;
 }
 #nav-bar li a{
     display: block;
@@ -23,4 +26,5 @@ h1 {
 
 #nav-bar li a:hover {
     background-color: grey;
+    border-radius: 20px;
   }
