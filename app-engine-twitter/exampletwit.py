@@ -23,10 +23,8 @@ OAUTH_TOKEN_SECRET = 'VFzfYcw0FYn9RFnG3MQomcLsES8lV3AJCJW0MEZpj7Sea'
 # The keyword query
 def Query():
     QUERY = 'big'
-
     # The file to write output as newline-delimited JSON documents
     OUT_FILE = QUERY + ".json"
-
 
     # Authenticate to Twitter with OAuth
 
