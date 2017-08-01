@@ -19,7 +19,11 @@ import os
 import webapp2
 import io
 import json
+<<<<<<< HEAD
 #import twitter
+=======
+# import twitter
+>>>>>>> 46c57d13ba4b484a9ca993403475fba369cf0f9c
 #from exampletwit import Query
 
 jinja_environment = jinja2.Environment(
