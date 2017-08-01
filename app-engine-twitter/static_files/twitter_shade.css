@@ -10,7 +10,15 @@ h1 {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    width: 100px;
 }
+#nav-bar li a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 14px 20px;
+  }
+
 #nav-bar li a:hover {
     background-color: grey;
   }
