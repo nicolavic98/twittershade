@@ -29,3 +29,9 @@
     background-color: #cce6ff;
     border-radius: 20px;
   }
+h2{
+  border-style: groove;
+  border-radius: 5px;
+  border-width: 7px;
+  width: 20px;
+}

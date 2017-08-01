@@ -17,10 +17,18 @@
 import jinja2
 import os
 import webapp2
-import io
 import json
+<<<<<<< HEAD
+import io
 import twitter
 
+<<<<<<< HEAD
+=======
+=======
+#import twitter
+#from exampletwit import Query
+>>>>>>> dba059813bff9e4f20073c8dc1fc3d19603e378b
+>>>>>>> ee0d7b19af98ccc4a17d34cab9f43e67e4dfa043
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -36,10 +44,54 @@ class AboutHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/about_page.html')
         self.response.write(my_template.render())
+class TwitterHandler(webapp2.RequestHandler):
+    def get(self):
+
+        # XXX: Go to http://twitter.com/apps/new to create an app and get values
+        # for these credentials that you'll need to provide in place of these
+        # empty string values that are defined as placeholders.
+        #
+        # See https://vimeo.com/79220146 for a short video that steps you
+        # through this process
+        #
+        # See https://dev.twitter.com/docs/auth/oauth for more information
+        # on Twitter's OAuth implementation.
+
+
+        CONSUMER_KEY = 'NaSlN5bA7hhc2RVChraHRJr2h'
+        CONSUMER_SECRET = 'SuUX64fEW0OuQpHGRjTWvadlyDTg3yXtvyxk3zsXZnpnA7vTWX'
+        OAUTH_TOKEN = '803517278-2JANsR8XTW6ZTgcIPwRLstgf9kRu1CVFxknPzxce'
+        OAUTH_TOKEN_SECRET = 'VFzfYcw0FYn9RFnG3MQomcLsES8lV3AJCJW0MEZpj7Sea'
+
+        # The keyword query
+        QUERY = 'big'
+
+        # The file to write output as newline-delimited JSON documents
+        OUT_FILE = QUERY + ".json"
+
+
+        # Authenticate to Twitter with OAuth
+
+        auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
+            # Create a connection to the Streaming API
+
+        twitter_stream = twitter.TwitterStream(auth=auth)
+
+
+        self.response.write('Filtering the public timeline for "{0}"'.format(QUERY))
+
+
+
+
 
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
+<<<<<<< HEAD
+    ('/about', AboutHandler),
+    ('/twitter', TwitterHandler)
+=======
     # ('/twitter', TwitterHandler),
     ('/about', AboutHandler)
+>>>>>>> dba059813bff9e4f20073c8dc1fc3d19603e378b
 ], debug=True)
