@@ -29,13 +29,13 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/twitter_shade.html')
         self.response.write(my_template.render())
-class TwitterHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write(Query)
+# class TwitterHandler(webapp2.RequestHandler):
+#     def get(self):
+#         self.response.write(Query)
 
 
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/twitter', TwitterHandler)
+    # ('/twitter', TwitterHandler)
 ], debug=True)
