@@ -50,3 +50,4 @@ def Query():
         for tweet in stream:
             f.write(unicode(u'{0}\n'.format(json.dumps(tweet, ensure_ascii=False))))
             print tweet['text']
+Query()

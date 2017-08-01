@@ -29,9 +29,9 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/twitter_shade.html')
         self.response.write(my_template.render())
-class TwitterHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write(Query)
+# class TwitterHandler(webapp2.RequestHandler):
+#     def get(self):
+#         self.response.write(Query)
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/about_page.html')
@@ -40,6 +40,6 @@ class AboutHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/twitter', TwitterHandler),
+    # ('/twitter', TwitterHandler),
     ('/about', AboutHandler)
 ], debug=True)
