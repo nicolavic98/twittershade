@@ -19,16 +19,8 @@ import os
 import webapp2
 import io
 import json
-<<<<<<< HEAD
 #import twitter
-=======
-# import twitter
-<<<<<<< HEAD
->>>>>>> 46c57d13ba4b484a9ca993403475fba369cf0f9c
 #from exampletwit import Query
-=======
-# from exampletwit import Query
->>>>>>> 3b1fbf7f4db2f2d91c8505f78578c705e70e8053
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -37,6 +29,9 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/twitter_shade.html')
         self.response.write(my_template.render())
+# class TwitterHandler(webapp2.RequestHandler):
+#     def get(self):
+#         self.response.write(Query)
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/about_page.html')
@@ -45,5 +40,6 @@ class AboutHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
+    # ('/twitter', TwitterHandler),
     ('/about', AboutHandler)
 ], debug=True)
