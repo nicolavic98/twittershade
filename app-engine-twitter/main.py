@@ -26,6 +26,8 @@ class MainHandler(webapp2.RequestHandler):
         my_template = jinja_environment.get_template('templates/twitter_shade.html')
         self.response.write(my_template.render())
 
+
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
