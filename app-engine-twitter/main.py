@@ -18,17 +18,10 @@ import jinja2
 import os
 import webapp2
 import json
-<<<<<<< HEAD
 import io
 import twitter
 
-<<<<<<< HEAD
-=======
-=======
-#import twitter
-#from exampletwit import Query
->>>>>>> dba059813bff9e4f20073c8dc1fc3d19603e378b
->>>>>>> ee0d7b19af98ccc4a17d34cab9f43e67e4dfa043
+
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -87,11 +80,6 @@ class TwitterHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-<<<<<<< HEAD
     ('/about', AboutHandler),
     ('/twitter', TwitterHandler)
-=======
-    # ('/twitter', TwitterHandler),
-    ('/about', AboutHandler)
->>>>>>> dba059813bff9e4f20073c8dc1fc3d19603e378b
 ], debug=True)
