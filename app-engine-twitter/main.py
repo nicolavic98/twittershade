@@ -20,6 +20,7 @@ import webapp2
 import io
 import json
 import twitter
+from exampletwit import Query
 
 
 jinja_environment = jinja2.Environment(
@@ -29,9 +30,13 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/twitter_shade.html')
         self.response.write(my_template.render())
+class TwitterHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.write(Query)
 
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/twitter', TwitterHandler)
 ], debug=True)
