@@ -5,8 +5,12 @@ body {
     margin: 0 auto;
     max-width: 600px;
   }
+.header {
+  display: inline-block;
+}
 #logo {
   float:left;
+  display: inline-block;
 }
  h1 {
   display: inline;
@@ -48,7 +52,7 @@ h2 {
   display: inline;
 }
 
-div {
+.expandable {
   max-width: 600px;
   height: 200px;
   background-size: cover;
