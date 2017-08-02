@@ -4,16 +4,14 @@ body {
     background-attachment: fixed;
     margin: 0 auto;
   }
-.header {
-
-}
 #logo {
   float:left;
 }
  h1 {
   display: inline;
   font-family: 'Ubuntu', sans-serif;
-  font-style: bold;
+  font-weight: lighter;
+  font-style: italic;
   list-style-type: none;
   font-size: 75px;
   color: #ccccff;
@@ -50,7 +48,6 @@ h2 {
   width: 100px;
   display: inline;
 }
-
 .expandable {
   max-width: 600px;
   height: 200px;
@@ -61,6 +58,7 @@ h2 {
 }
 p {
   font-family: 'Josefin Sans', sans-serif;
+  font-weight: lighter;
   font-size: 30px;
   color: rgba(255,255,255,1);
   background: black;

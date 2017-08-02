@@ -21,6 +21,7 @@ import json
 import io
 import twitter
 import pprint
+from google.appengine.ext import ndb
 
 
 jinja_environment = jinja2.Environment(
