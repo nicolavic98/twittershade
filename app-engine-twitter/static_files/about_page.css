@@ -57,6 +57,8 @@ div {
   border-radius: 12px;
 }
 p {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
   color: rgba(255,255,255,1);
   background: black;
   background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
@@ -75,7 +77,8 @@ p {
   -moz-transition: height .5s;
 }
 small {
-  opacity: 0
+  opacity: 0;
+  font-size: 18px;
 }
 .show-description p{
   height: 150px;
