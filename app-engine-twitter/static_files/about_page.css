@@ -15,10 +15,11 @@ body {
  h1 {
   display: inline;
   font-family: 'Ubuntu', sans-serif;
-  font-style: italic;
+  font-style: bold;
   list-style-type: none;
   font-size: 75px;
   color: #ccccff;
+
   margin: 10px 0 0 0;
 }
 #nav-bar {
