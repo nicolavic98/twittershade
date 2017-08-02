@@ -25,7 +25,13 @@
       </ul>
   </div></center> </br> </br></br> </br>
   <center>
-    <div id = "Tweet"><span>Tweet</span></div></center> 
+    {% for tweet in all_tweets: %}
+    <div id = "Tweet"><span>
+    https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}
+
+    </span></div>
+    {% endfor %}
+  </center>
   </br></br>
   <center><div id = "Response"><span>Response</span></div></center>
   <br></br>
