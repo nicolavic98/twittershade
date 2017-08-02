@@ -1,5 +1,10 @@
-.header {
-}
+body {
+    background-image: url("http://www.walldevil.com/wallpapers/a68/plain-blue-wallpaper-gradient-wallpapers.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0 auto;
+    max-width: 600px;
+  }
 #logo {
   float:left;
 }
@@ -7,7 +12,7 @@
   display: inline;
   font-family: 'Ubuntu', sans-serif;
   font-style: italic;
-  text-align: center;
+  list-style-type: none;
   font-size: 75px;
   color: #ccccff;
   margin: 10px 0 0 0;
@@ -35,14 +40,25 @@
     background-color: #cce6ff;
     border-radius: 20px;
   }
-h2{
+h2 {
   border-style: groove;
   border-radius: 5px;
   border-width: 7px;
   width: 100px;
   display: inline;
 }
-#Image_1 {
+
+div {
+  max-width: 600px;
+  height: 200px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+p {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
   color: rgba(255,255,255,1);
   background: black;
   background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
@@ -55,7 +71,30 @@ h2{
   bottom: 0;
   margin: 0;
   height: 30px;
+  width: 600px;
   transition: height .5s;
   -webkit-transition: height .5s;
   -moz-transition: height .5s;
+}
+small {
+  opacity: 0;
+  font-size: 18px;
+}
+.show-description p{
+  height: 150px;
+}
+.show-description small{
+  opacity: 1;
+}
+.first {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
+}
+.second {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
+}
+.third {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
+}
+.fourth {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
 }
