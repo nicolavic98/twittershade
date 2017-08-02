@@ -1,4 +1,10 @@
+.header {
+}
+#logo {
+  float:left;
+}
 h1 {
+  display: inline;
   font-family: 'Londrina Shadow', cursive;
   font-style: italic;
   text-align: center;
@@ -6,8 +12,8 @@ h1 {
   color: #ccccff;
   margin: 10px 0 0 0;
 }
-/*nav bar */
 #nav-bar {
+    float: right;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -28,7 +34,40 @@ h1 {
     background-color: #cce6ff;
     border-radius: 20px;
   }
+#Tweet  {
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+  width: 500px;
+  font-size: 20px;
+  background-color: #66b3ff;
+  text-align: center;
+  height: 200px;
+  line-height: 200px;
+}
+#Response  {
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+  width: 500px;
+  font-size: 20px;
+  background-color: #66b3ff;
+  text-align: center;
+  height: 200px;
+  line-height: 200px;
+}
 
-#Response {
-
+#Tweet span, #Response span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+#Response_button {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #66b3ff;
 }

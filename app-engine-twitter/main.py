@@ -20,9 +20,7 @@ import webapp2
 import json
 import io
 import twitter
-
-
-
+import pprint
 
 
 jinja_environment = jinja2.Environment(
@@ -59,10 +57,10 @@ class TwitterHandler(webapp2.RequestHandler):
         OAUTH_TOKEN_SECRET = 'FGp9Mr0T4TOjrpPCUVJqqCNVknUyGsI0HFtCui5TVtNMH'
 
         # The keyword query
-        QUERY = 'donald'
+        #QUERY = 'donald'
 
         # The file to write output as newline-delimited JSON documents
-        OUT_FILE = QUERY + ".json"
+        #OUT_FILE = QUERY + ".json"
 
 
         # Authenticate to Twitter with OAuth
@@ -71,19 +69,15 @@ class TwitterHandler(webapp2.RequestHandler):
 
         # Create a connection to the Streaming API
 
-        twitter_stream = twitter.TwitterStream(auth=auth)
+        twitter_stream = twitter.Twitter(auth=auth)
+        for tweet in twitter_stream.statuses.user_timeline(screen_name="kvnAbsn"):
 
+            self.response.write("<pre>THIS IS A TWEET::: " +
+            pprint.pformat(tweet['text']) + '\n' +
+            pprint.pformat(tweet['user']['screen_name']) + '\n' +
 
-        self.response.write('Filtering the public timeline for "{0}"'.format(QUERY))
+            "\n------</pre>")
 
-        stream = twitter_stream.statuses.filter(track=QUERY)
-
-        # Write one tweet per line as a JSON document.
-
-        with io.open(OUT_FILE, 'w', encoding='utf-8', buffering=1) as f:
-            for tweet in stream:
-                f.write(unicode(u'{0}\n'.format(json.dumps(tweet, ensure_ascii=False))))
-                self.response.write(tweet['text'])
 
 
 
