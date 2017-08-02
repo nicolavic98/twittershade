@@ -59,6 +59,7 @@ h2 {
 }
 p {
   font-family: 'Josefin Sans', sans-serif;
+  font-weight: lighter;
   font-size: 30px;
   color: rgba(255,255,255,1);
   background: black;
