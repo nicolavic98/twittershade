@@ -13,11 +13,16 @@ body {
  h1 {
   display: inline;
   font-family: 'Ubuntu', sans-serif;
+<<<<<<< HEAD
   font-weight: lighter;
   font-style: italic;
+=======
+  font-style: bold;
+>>>>>>> 880efe9e97ffe2abb153f0655778bcdb6b155fe8
   list-style-type: none;
   font-size: 75px;
   color: #ccccff;
+
   margin: 10px 0 0 0;
 }
 #nav-bar {
