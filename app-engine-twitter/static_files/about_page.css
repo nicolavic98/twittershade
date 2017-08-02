@@ -3,14 +3,12 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0 auto;
-    max-width: 600px;
   }
 .header {
-  display: inline-block;
+
 }
 #logo {
   float:left;
-  display: inline-block;
 }
  h1 {
   display: inline;
