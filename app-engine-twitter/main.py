@@ -71,14 +71,13 @@ class TwitterHandler(webapp2.RequestHandler):
 
         twitter_stream = twitter.Twitter(auth=auth)
         for tweet in twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump"):
-        #    if tweet['retweet_count'] > 10000:
-        #        self.response.write("<pre>THIS IS A TWEET::: " +
-        #    pprint.pformat(tweet['text']) + '\n' +
-        #    pprint.pformat(tweet['user']['screen_name']) + '\n' +
+            if tweet['retweet_count'] > 10000:
+                self.response.write("<pre>THIS IS A TWEET::: "  +
+                pprint.pformat(tweet['text']) + '\n' +
+                pprint.pformat(tweet['user']['screen_name']) + '\n' +
+                pprint.pformat(tweet['id_str']) + '\n' +
 
-            self.response.write (tweet)
-
-            #"\n------</pre>")
+                "\n------</pre>")
 
 
 
