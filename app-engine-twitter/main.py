@@ -21,6 +21,7 @@ import json
 import io
 import twitter
 import pprint
+from models import Response2
 from google.appengine.ext import ndb
 
 
@@ -29,12 +30,20 @@ jinja_environment = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        response_store = self.request.get("responser")
         my_template = jinja_environment.get_template('templates/twitter_shade.html')
-        self.response.write(my_template.render())
+        render_data = {}
+        render_data["responser"] = response_store
+        self.response.write(my_template.render(render_data))
+        new_response = Response2(responser = response_store)
+        new_response.put()
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/about_page.html')
         self.response.write(my_template.render())
+
+
+        
 class TwitterHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/twitter_shade.html')

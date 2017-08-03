@@ -1,13 +1,15 @@
 body {
-    background-image: url("http://www.walldevil.com/wallpapers/a68/plain-blue-wallpaper-gradient-wallpapers.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 0 auto;
-  }
-#logo {
-  float:left;
+  background-image: url("http://www.walldevil.com/wallpapers/a68/plain-blue-wallpaper-gradient-wallpapers.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0 auto;
 }
- h1 {
+
+#logo {
+  float: left;
+}
+
+h1 {
   display: inline;
   font-family: 'Ubuntu', sans-serif;
   font-weight: lighter;
@@ -15,32 +17,34 @@ body {
   list-style-type: none;
   font-size: 75px;
   color: #ccccff;
-
   margin: 10px 0 0 0;
 }
+
 #nav-bar {
-    float: right;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 20px;
-    width: 100px;
-    font-size: 20px;
-    background-color: #66b3ff;
+  float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+  width: 100px;
+  font-size: 20px;
+  background-color: #66b3ff;
 }
-#nav-bar li a{
-    display: block;
-    color: white;
-    font-family: helvetica;
-    font-style: italic;
-    text-decoration: none;
-    padding: 14px 20px;
-  }
+
+#nav-bar li a {
+  display: block;
+  color: white;
+  font-family: helvetica;
+  font-style: italic;
+  text-decoration: none;
+  padding: 14px 20px;
+}
 
 #nav-bar li a:hover {
-    background-color: #cce6ff;
-    border-radius: 20px;
-  }
+  background-color: #cce6ff;
+  border-radius: 20px;
+}
+
 h2 {
   border-style: groove;
   border-radius: 5px;
@@ -48,6 +52,7 @@ h2 {
   width: 100px;
   display: inline;
 }
+
 .expandable {
   max-width: 600px;
   height: 200px;
@@ -56,15 +61,16 @@ h2 {
   margin: 40px 0 0 0;
   border-radius: 12px;
 }
+
 p {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: lighter;
   font-size: 30px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   background: black;
-  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, .4));
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, .4));
+  background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, .4));
   padding: 10px;
   line-height: 50px;
   text-align: justify;
@@ -77,25 +83,32 @@ p {
   -webkit-transition: height .5s;
   -moz-transition: height .5s;
 }
+
 small {
   opacity: 0;
   font-size: 18px;
 }
-.show-description p{
+
+.show-description p {
   height: 150px;
 }
-.show-description small{
+
+.show-description small {
   opacity: 1;
 }
+
 .first {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
 }
+
 .second {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
 }
+
 .third {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
 }
+
 .fourth {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
 }
