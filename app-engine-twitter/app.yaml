@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 application: react-twitter-175714
+=======
+application: twitter-shade
+>>>>>>> 54a6a2dcc0a397e69b5f2cd2968e6490cccdc7fb
 version: 1
 runtime: python27
 api_version: 1
