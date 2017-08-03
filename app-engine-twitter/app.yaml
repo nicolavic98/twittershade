@@ -1,4 +1,4 @@
-application: app-engine-twitter
+application: twitter-shade
 version: 1
 runtime: python27
 api_version: 1
