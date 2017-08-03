@@ -84,6 +84,7 @@ class TwitterHandler(webapp2.RequestHandler):
 
         twitter_stream = twitter.Twitter(auth=auth)
         all_tweets = twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump")
+        render_data = {}
         #for tweet in all_tweets:
         #self.response.write(all_tweets[0])
 
@@ -98,18 +99,22 @@ class TwitterHandler(webapp2.RequestHandler):
             #self.response.write(embed)
             # html = twitter_stream.statuses.oembed(embed(tweet['html']))
         retweet_count = all_tweets[0]['retweet_count']
-        
+
         below = choice(below10k)
         ten = choice(tenKto25K)
         above = choice(above25K)
 
-        for tweet in all_tweets:
-            if retweet_count <= 9999:
-                self.response.write(my_template.render(below))
-            if retweet_count >= 10000 and retweet_count <= 25000:
-                self.response.write(ten)
-            if retweet_count >= 25000:
-                self.response.write(above)
+
+
+        if retweet_count <= 9999:
+            render_data['responses'] = below
+            # self.response.write(my_template.render(render_data['below']))
+        elif retweet_count >= 10000 and retweet_count <= 24999:
+            render_data['responses'] = ten
+            # self.response.write(my_template.render(render_data['ten']))
+        elif retweet_count >= 25000:
+            render_data['responses'] = above
+            # self.response.write(my_template.render(render_data['above']))
 
 
 
@@ -118,20 +123,13 @@ class TwitterHandler(webapp2.RequestHandler):
             # id_str = tweet['id_str']
 
 
-<<<<<<< HEAD
-=======
-        # if tweet['retweet_count'] > 10000:
-        #     tweet_text = tweet['text']
-        #     screen_name = tweet['user']['screen_name']
-        #     id_str = tweet['id_str']
->>>>>>> 0698d50acbe565ba9db10397c39f1f20333efae7
-                # self.response.write("<pre>THIS IS A TWEET::: "  +
-                # pprint.pformat(tweet_text) + '\n' +
-                # pprint.pformat(screen_name) + '\n' +
-                # pprint.pformat(id_str) + '\n' +
-                # "\n------</pre>")
-        render_data = {}
-        embed_html = twitter_stream.statuses.oembed(_id=tweet['id_str'])['html']
+            # self.response.write("<pre>THIS IS A TWEET::: "  +
+            # pprint.pformat(tweet_text) + '\n' +
+            # pprint.pformat(screen_name) + '\n' +
+            # pprint.pformat(id_str) + '\n' +
+            # "\n------</pre>")
+
+        embed_html = twitter_stream.statuses.oembed(_id=all_tweets[0]['id_str'])['html']
         render_data['embed_html'] = embed_html
         self.response.write(my_template.render(render_data))
 
