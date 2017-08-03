@@ -35,7 +35,7 @@ class MainHandler(webapp2.RequestHandler):
         render_data = {}
         render_data["responser"] = response_store
         self.response.write(my_template.render(render_data))
-        new_response = Response2(responses = response_store)
+        new_response = Response2(responser = response_store)
         new_response.put()
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
