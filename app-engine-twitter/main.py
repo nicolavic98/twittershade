@@ -43,96 +43,95 @@ class MainHandler(webapp2.RequestHandler):
         # self.response.write(my_template.render(render_data))
         new_response = Response2(responser = response_store)
         new_response.put()
-<<<<<<< HEAD
-            def get(self):
-                my_template = jinja_environment.get_template('templates/twitter_shade.html')
 
-                # XXX: Go to http://twitter.com/apps/new to create an app and get values
-                # for these credentials that you'll need to provide in place of these
-                # empty string values that are defined as placeholders.
-                #
-                # See https://vimeo.com/79220146 for a short video that steps you
-                # through this process
-                #
-                # See https://dev.twitter.com/docs/auth/oauth for more information
-                # on Twitter's OAuth implementation.
-                response_store = self.request.get("responser")
-                my_template = jinja_environment.get_template('templates/twitter_shade.html')
-                render_data = {}
-                render_data["responser"] = response_store
-                # self.response.write(my_template.render(render_data))
-                new_response = Response2(responser = response_store)
-                new_response.put()
+        my_template = jinja_environment.get_template('templates/twitter_shade.html')
 
-                CONSUMER_KEY = 'RNGs9JfBd1dkwnGwkU5vZUGEa'
-                CONSUMER_SECRET = 'cfIYI2x9bi3KBUMTY0NpjfWiZazIQiQY68HAZ3LBAp9qxQFxML'
-                OAUTH_TOKEN = '775098653262254080-IOtUeLlET52C0e8T8ALAjlOXPkXuatl'
-                OAUTH_TOKEN_SECRET = 'FGp9Mr0T4TOjrpPCUVJqqCNVknUyGsI0HFtCui5TVtNMH'
+        # XXX: Go to http://twitter.com/apps/new to create an app and get values
+        # for these credentials that you'll need to provide in place of these
+        # empty string values that are defined as placeholders.
+        #
+        # See https://vimeo.com/79220146 for a short video that steps you
+        # through this process
+        #
+        # See https://dev.twitter.com/docs/auth/oauth for more information
+        # on Twitter's OAuth implementation.
+        response_store = self.request.get("responser")
+        my_template = jinja_environment.get_template('templates/twitter_shade.html')
+        render_data = {}
+        render_data["responser"] = response_store
+        # self.response.write(my_template.render(render_data))
+        new_response = Response2(responser = response_store)
+        new_response.put()
 
-                # The keyword query
-                #QUERY = 'donald'
+        CONSUMER_KEY = 'RNGs9JfBd1dkwnGwkU5vZUGEa'
+        CONSUMER_SECRET = 'cfIYI2x9bi3KBUMTY0NpjfWiZazIQiQY68HAZ3LBAp9qxQFxML'
+        OAUTH_TOKEN = '775098653262254080-IOtUeLlET52C0e8T8ALAjlOXPkXuatl'
+        OAUTH_TOKEN_SECRET = 'FGp9Mr0T4TOjrpPCUVJqqCNVknUyGsI0HFtCui5TVtNMH'
 
-                # The file to write output as newline-delimited JSON documents
-                #OUT_FILE = QUERY + ".json"
+        # The keyword query
+        #QUERY = 'donald'
 
-
-                # Authenticate to Twitter with OAuth
-
-                auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
-
-                # Create a connection to the Streaming API
-
-                twitter_stream = twitter.Twitter(auth=auth)
-                all_tweets = twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump")
-                rand_all_tweets = all_tweets[randint(0, 10)]
-                render_data = {}
-                #for tweet in all_tweets:
-                #self.response.write(all_tweets[0])
-
-                # render_data['id_str'] = tweet['id_str']
-                # render_data['screen_name'] = tweet['user']['screen_name']
-                # render_data['all_tweets'] = all_tweets
-                # for tweet in all_tweets:
-                #     embed = twitter_stream.statuses.oembed(_id=tweet['id_str'])
-                    # html_list = []
-                    # render_data['html_list'] = html_list
-                    # html_list.append(embed)
-                    #self.response.write(embed)
-                    # html = twitter_stream.statuses.oembed(embed(tweet['html']))
-                retweet_count = rand_all_tweets['retweet_count']
-
-                below = choice(below10k)
-                ten = choice(tenKto25K)
-                above = choice(above25K)
+        # The file to write output as newline-delimited JSON documents
+        #OUT_FILE = QUERY + ".json"
 
 
+        # Authenticate to Twitter with OAuth
 
-                if retweet_count <= 9999:
-                    render_data['responses'] = below
-                    # self.response.write(my_template.render(render_data['below']))
-                elif retweet_count >= 10000 and retweet_count <= 24999:
-                    render_data['responses'] = ten
-                    # self.response.write(my_template.render(render_data['ten']))
-                elif retweet_count >= 25000:
-                    render_data['responses'] = above
-                    # self.response.write(my_template.render(render_data['above']))
+        auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
+
+        # Create a connection to the Streaming API
+
+        twitter_stream = twitter.Twitter(auth=auth)
+        all_tweets = twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump")
+        rand_all_tweets = all_tweets[randint(0, 10)]
+        render_data = {}
+        #for tweet in all_tweets:
+        #self.response.write(all_tweets[0])
+
+        # render_data['id_str'] = tweet['id_str']
+        # render_data['screen_name'] = tweet['user']['screen_name']
+        # render_data['all_tweets'] = all_tweets
+        # for tweet in all_tweets:
+        #     embed = twitter_stream.statuses.oembed(_id=tweet['id_str'])
+            # html_list = []
+            # render_data['html_list'] = html_list
+            # html_list.append(embed)
+            #self.response.write(embed)
+            # html = twitter_stream.statuses.oembed(embed(tweet['html']))
+        retweet_count = rand_all_tweets['retweet_count']
+
+        below = choice(below10k)
+        ten = choice(tenKto25K)
+        above = choice(above25K)
 
 
 
-                    # tweet_text = tweet['text']
-                    # screen_name = tweet['user']['screen_name']
-                    # id_str = tweet['id_str']
+        if retweet_count <= 9999:
+            render_data['responses'] = below
+            # self.response.write(my_template.render(render_data['below']))
+        elif retweet_count >= 10000 and retweet_count <= 24999:
+            render_data['responses'] = ten
+            # self.response.write(my_template.render(render_data['ten']))
+        elif retweet_count >= 25000:
+            render_data['responses'] = above
+            # self.response.write(my_template.render(render_data['above']))
 
 
-                    # self.response.write("<pre>THIS IS A TWEET::: "  +
-                    # pprint.pformat(tweet_text) + '\n' +
-                    # pprint.pformat(screen_name) + '\n' +
-                    # pprint.pformat(id_str) + '\n' +
-                    # "\n------</pre>")
 
-                embed_html = twitter_stream.statuses.oembed(_id=rand_all_tweets['id_str'])['html']
-                render_data['embed_html'] = embed_html
-                self.response.write(my_template.render(render_data))
+            # tweet_text = tweet['text']
+            # screen_name = tweet['user']['screen_name']
+            # id_str = tweet['id_str']
+
+
+            # self.response.write("<pre>THIS IS A TWEET::: "  +
+            # pprint.pformat(tweet_text) + '\n' +
+            # pprint.pformat(screen_name) + '\n' +
+            # pprint.pformat(id_str) + '\n' +
+            # "\n------</pre>")
+
+        embed_html = twitter_stream.statuses.oembed(_id=rand_all_tweets['id_str'])['html']
+        render_data['embed_html'] = embed_html
+        self.response.write(my_template.render(render_data))
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/about_page.html')
@@ -230,7 +229,7 @@ class AboutHandler(webapp2.RequestHandler):
 #         embed_html = twitter_stream.statuses.oembed(_id=rand_all_tweets['id_str'])['html']
 #         render_data['embed_html'] = embed_html
 #         self.response.write(my_template.render(render_data))
-=======
+
         # XXX: Go to http://twitter.com/apps/new to create an app and get values
         # for these credentials that you'll need to provide in place of these
         # empty string values that are defined as placeholders.
@@ -240,20 +239,20 @@ class AboutHandler(webapp2.RequestHandler):
         #
         # See https://dev.twitter.com/docs/auth/oauth for more information
         # on Twitter's OAuth implementation.
-        response_store = self.request.get("responser")
-        my_template = jinja_environment.get_template('templates/twitter_shade.html')
-
-        # render_data = {}
-
-        render_data["responser"] = response_store
-        # self.response.write(my_template.render(render_data))
-        new_response = Response2(responser = response_store)
-        new_response.put()
-
-        CONSUMER_KEY = 'RNGs9JfBd1dkwnGwkU5vZUGEa'
-        CONSUMER_SECRET = 'cfIYI2x9bi3KBUMTY0NpjfWiZazIQiQY68HAZ3LBAp9qxQFxML'
-        OAUTH_TOKEN = '775098653262254080-IOtUeLlET52C0e8T8ALAjlOXPkXuatl'
-        OAUTH_TOKEN_SECRET = 'FGp9Mr0T4TOjrpPCUVJqqCNVknUyGsI0HFtCui5TVtNMH'
+        # response_store = self.request.get("responser")
+        # my_template = jinja_environment.get_template('templates/twitter_shade.html')
+        #
+        # # render_data = {}
+        #
+        # render_data["responser"] = response_store
+        # # self.response.write(my_template.render(render_data))
+        # new_response = Response2(responser = response_store)
+        # new_response.put()
+        #
+        # CONSUMER_KEY = 'RNGs9JfBd1dkwnGwkU5vZUGEa'
+        # CONSUMER_SECRET = 'cfIYI2x9bi3KBUMTY0NpjfWiZazIQiQY68HAZ3LBAp9qxQFxML'
+        # OAUTH_TOKEN = '775098653262254080-IOtUeLlET52C0e8T8ALAjlOXPkXuatl'
+        # OAUTH_TOKEN_SECRET = 'FGp9Mr0T4TOjrpPCUVJqqCNVknUyGsI0HFtCui5TVtNMH'
 
         # The keyword query
         #QUERY = 'donald'
@@ -264,14 +263,14 @@ class AboutHandler(webapp2.RequestHandler):
 
         # Authenticate to Twitter with OAuth
 
-        auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
+        # auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 
         # Create a connection to the Streaming API
 
-        twitter_stream = twitter.Twitter(auth=auth)
-        all_tweets = twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump")
-        rand_all_tweets = all_tweets[randint(0, 10)]
-        render_data = {}
+        # twitter_stream = twitter.Twitter(auth=auth)
+        # all_tweets = twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump")
+        # rand_all_tweets = all_tweets[randint(0, 10)]
+        # render_data = {}
         #for tweet in all_tweets:
         #self.response.write(all_tweets[0])
 
@@ -285,22 +284,22 @@ class AboutHandler(webapp2.RequestHandler):
             # html_list.append(embed)
             #self.response.write(embed)
             # html = twitter_stream.statuses.oembed(embed(tweet['html']))
-        retweet_count = rand_all_tweets['retweet_count']
-
-        below = choice(below10k)
-        ten = choice(tenKto25K)
-        above = choice(above25K)
-
-
-
-        if retweet_count <= 9999:
-            render_data['responses'] = below
-            # self.response.write(my_template.render(render_data['below']))
-        elif retweet_count >= 10000 and retweet_count <= 24999:
-            render_data['responses'] = ten
-            # self.response.write(my_template.render(render_data['ten']))
-        elif retweet_count >= 25000:
-            render_data['responses'] = above
+        # retweet_count = rand_all_tweets['retweet_count']
+        #
+        # below = choice(below10k)
+        # ten = choice(tenKto25K)
+        # above = choice(above25K)
+        #
+        #
+        #
+        # if retweet_count <= 9999:
+        #     render_data['responses'] = below
+        #     # self.response.write(my_template.render(render_data['below']))
+        # elif retweet_count >= 10000 and retweet_count <= 24999:
+        #     render_data['responses'] = ten
+        #     # self.response.write(my_template.render(render_data['ten']))
+        # elif retweet_count >= 25000:
+        #     render_data['responses'] = above
             # self.response.write(my_template.render(render_data['above']))
 
 
@@ -316,10 +315,10 @@ class AboutHandler(webapp2.RequestHandler):
             # pprint.pformat(id_str) + '\n' +
             # "\n------</pre>")
 
-        embed_html = twitter_stream.statuses.oembed(_id=rand_all_tweets['id_str'])['html']
-        render_data['embed_html'] = embed_html
-        self.response.write(my_template.render(render_data))
->>>>>>> bceff9e184c76c142b14acf1bd99c7c78e8fe7d9
+        # embed_html = twitter_stream.statuses.oembed(_id=rand_all_tweets['id_str'])['html']
+        # render_data['embed_html'] = embed_html
+        # self.response.write(my_template.render(render_data))
+
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
