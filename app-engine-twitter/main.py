@@ -21,6 +21,7 @@ import json
 import io
 import twitter
 import pprint
+from models import Response2
 from google.appengine.ext import ndb
 
 
@@ -36,7 +37,6 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write(my_template.render(render_data))
         new_response = Response2(responses = response_store)
         new_response.put()
-s        
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/about_page.html')
