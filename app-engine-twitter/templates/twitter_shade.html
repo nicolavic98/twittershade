@@ -16,7 +16,7 @@
 </head>
 <body>
   </br></br>
-  
+
     <center><div class = "header">
       <img id="logo" src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png" height="168" width="168"></img>
       <h1>Welcome to Twitter Shade!</h1>
@@ -26,12 +26,9 @@
       </ul>
   </div></center> </br> </br></br> </br>
   <center>
-    {% for tweet in all_tweets: %}
     <div id = "Tweet"><span>
-    https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}
-
+      {{embed_html}}
     </span></div>
-    {% endfor %}
   </center>
   </br></br>
   <center><button type="button" onclick="alert('Enjoy your New Reponse!')">Show me a response!</button></center> </br></br>
