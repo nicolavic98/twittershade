@@ -139,14 +139,19 @@ class TwitterHandler(webapp2.RequestHandler):
         render_data['embed_html'] = embed_html
         self.response.write(my_template.render(render_data))
 
-
-
-
+class SubmittedHandler(webapp2.RequestHandler):
+     def get(self):
+        new_template = jinja_environment.get_template('templates/submittedresponses.html')
+        query = Response2.query()
+        render_data = {}
+        render_data['new_list'] = query.fetch()
+        self.response.write(new_template.render(render_data))
 
 
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/about', AboutHandler),
-    ('/twitter', TwitterHandler)
+    ('/twitter', TwitterHandler),
+    ('/subresponses', SubmittedHandler)
 ], debug=True)

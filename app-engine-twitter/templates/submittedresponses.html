@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-image: url("http://www.walldevil.com/wallpapers/a68/plain-blue-wallpaper-gradient-wallpapers.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
+  <link rel="stylesheet" href="/resources/twitter_shade.css"></link>
+</head>
+
+<body>
+    <center>
+      <div class="header">
+        <img id="logo" src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png" height="168" width="168"></img>
+        <h1> User Submitted Responses</h1>
+        <ul id="nav-bar">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/subresponses">User Ideas</a></li>
+        </ul>
+      </div>
+    </center>
+</br></br></br></br></br>
+
+  <ol>
+    {% for listItem in new_list %}
+    <li>{{listItem.responser}}</li>
+    {% endfor %}
+  </ol>
