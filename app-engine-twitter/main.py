@@ -21,9 +21,13 @@ import json
 from models import Response2
 import os
 import pprint
-from random import randint
+from random import choice
 import twitter
 import webapp2
+from responses import below10k
+from responses import tenKto25K
+from responses import above25K
+
 
 
 jinja_environment = jinja2.Environment(
@@ -82,7 +86,7 @@ class TwitterHandler(webapp2.RequestHandler):
         all_tweets = twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump")
         #for tweet in all_tweets:
         #self.response.write(all_tweets[0])
-        tweet = all_tweets
+
         # render_data['id_str'] = tweet['id_str']
         # render_data['screen_name'] = tweet['user']['screen_name']
         # render_data['all_tweets'] = all_tweets
@@ -93,11 +97,34 @@ class TwitterHandler(webapp2.RequestHandler):
             # html_list.append(embed)
             #self.response.write(embed)
             # html = twitter_stream.statuses.oembed(embed(tweet['html']))
+        retweet_count = all_tweets[0]['retweet_count']
+        
+        below = choice(below10k)
+        ten = choice(tenKto25K)
+        above = choice(above25K)
 
+        for tweet in all_tweets:
+            if retweet_count <= 9999:
+                self.response.write(my_template.render(below))
+            if retweet_count >= 10000 and retweet_count <= 25000:
+                self.response.write(ten)
+            if retweet_count >= 25000:
+                self.response.write(above)
+
+
+
+            # tweet_text = tweet['text']
+            # screen_name = tweet['user']['screen_name']
+            # id_str = tweet['id_str']
+
+
+<<<<<<< HEAD
+=======
         # if tweet['retweet_count'] > 10000:
         #     tweet_text = tweet['text']
         #     screen_name = tweet['user']['screen_name']
         #     id_str = tweet['id_str']
+>>>>>>> 0698d50acbe565ba9db10397c39f1f20333efae7
                 # self.response.write("<pre>THIS IS A TWEET::: "  +
                 # pprint.pformat(tweet_text) + '\n' +
                 # pprint.pformat(screen_name) + '\n' +
