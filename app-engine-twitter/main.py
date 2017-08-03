@@ -138,11 +138,14 @@ class TwitterHandler(webapp2.RequestHandler):
         embed_html = twitter_stream.statuses.oembed(_id=all_tweets[0]['id_str'])['html']
         render_data['embed_html'] = embed_html
         self.response.write(my_template.render(render_data))
-# class TwitterHandler(webapp2.RequestHandler):
-#     def get(self):
-#         my_template = jinja_environment.get_template('templates/submittedresponses.html')
 
-
+class SubmittedHandler(webapp2.RequestHandler):
+     def get(self):
+        new_template = jinja_environment.get_template('templates/submittedresponses.html')
+        query = Response2.query()
+        render_data = {}
+        render_data['new_list'] = query.fetch()
+        self.response.write(new_template.render(render_data))
 
 
 
@@ -150,5 +153,5 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/about', AboutHandler),
     ('/twitter', TwitterHandler),
-    # ('/subresponses', SubmittedHandler)
+    ('/subresponses', SubmittedHandler)
 ], debug=True)
