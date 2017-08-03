@@ -89,7 +89,7 @@ class TwitterHandler(webapp2.RequestHandler):
         # Create a connection to the Streaming API
 
         twitter_stream = twitter.Twitter(auth=auth)
-        all_tweets = twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump")
+        all_tweets = twitter_stream.statuses.user_timeline(screen_name="the_jada_fire")
         render_data = {}
         #for tweet in all_tweets:
         #self.response.write(all_tweets[0])
