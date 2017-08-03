@@ -118,6 +118,13 @@ class TwitterHandler(webapp2.RequestHandler):
             # id_str = tweet['id_str']
 
 
+<<<<<<< HEAD
+=======
+        # if tweet['retweet_count'] > 10000:
+        #     tweet_text = tweet['text']
+        #     screen_name = tweet['user']['screen_name']
+        #     id_str = tweet['id_str']
+>>>>>>> 0698d50acbe565ba9db10397c39f1f20333efae7
                 # self.response.write("<pre>THIS IS A TWEET::: "  +
                 # pprint.pformat(tweet_text) + '\n' +
                 # pprint.pformat(screen_name) + '\n' +
