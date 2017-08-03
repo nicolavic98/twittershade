@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <style>
-      body{
-          background-image: url("http://www.walldevil.com/wallpapers/a68/plain-blue-wallpaper-gradient-wallpapers.jpg");
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          }
-    </style>
-        <link rel="stylesheet" href="/resources/twitter_shade.css"></link>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="/resources/twitter_shade.js"></script>
-        <link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
-</head>
-<body>
-  </br></br>
 
-    <center><div class = "header">
+<head>
+  <style>
+    body {
+      background-image: url("http://www.walldevil.com/wallpapers/a68/plain-blue-wallpaper-gradient-wallpapers.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
+  <link rel="stylesheet" href="/resources/twitter_shade.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/resources/twitter_shade.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+</head>
+
+<body>
+  </br>
+  </br>
+
+  <center>
+    <div class="header">
       <img id="logo" src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png" height="168" width="168"></img>
       <h1>Welcome to Twitter Shade!</h1>
-      <ul id = "nav-bar">
+      <ul id="nav-bar">
         <li><a href="">Home</a></li>
         <li><a href="/about">About</a></li>
       </ul>
-  </div></center> </br> </br></br> </br>
+    </div>
+  </center>
+  </br>
+  </br>
+  </br>
+  </br>
   <center>
     {% for tweet in all_tweets: %}
-    <div id = "Tweet"><span>
+    <div id="Tweet"><span>
     https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}
 
     </span></div>
     {% endfor %}
   </center>
-  </br></br>
-  <center><button type="button" onclick="alert('Enjoy your New Reponse!')">Show me a response!</button></center> </br></br>
-  <center><div id = "Response"><span>Response</span></div></center>
+  </br>
+  </br>
+  <center><button type="button" onclick="alert('Enjoy your New Reponse!')">Show me a response!</button></center>
+  </br>
+  </br>
+  <center>
+    <div id="Response"><span>Response</span></div>
+  </center>
   <br></br>
-    <center>
-      <form>
+  <center>
+    <form>
       Create a Response:<br>
       <input type="text" name="firstname" value="">
       <br>
@@ -46,4 +60,5 @@
     </form>
   </center>
 </body>
+
 </html>
