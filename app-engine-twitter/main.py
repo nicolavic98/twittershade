@@ -43,7 +43,6 @@ class MainHandler(webapp2.RequestHandler):
         # self.response.write(my_template.render(render_data))
         new_response = Response2(responser = response_store)
         new_response.put()
-<<<<<<< HEAD
             def get(self):
                 my_template = jinja_environment.get_template('templates/twitter_shade.html')
 
@@ -230,7 +229,6 @@ class AboutHandler(webapp2.RequestHandler):
 #         embed_html = twitter_stream.statuses.oembed(_id=rand_all_tweets['id_str'])['html']
 #         render_data['embed_html'] = embed_html
 #         self.response.write(my_template.render(render_data))
-=======
         # XXX: Go to http://twitter.com/apps/new to create an app and get values
         # for these credentials that you'll need to provide in place of these
         # empty string values that are defined as placeholders.
@@ -319,7 +317,6 @@ class AboutHandler(webapp2.RequestHandler):
         embed_html = twitter_stream.statuses.oembed(_id=rand_all_tweets['id_str'])['html']
         render_data['embed_html'] = embed_html
         self.response.write(my_template.render(render_data))
->>>>>>> bceff9e184c76c142b14acf1bd99c7c78e8fe7d9
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
