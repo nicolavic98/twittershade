@@ -43,7 +43,7 @@ h1 {
   border-radius: 20px;
   width: 500px;
   font-size: 20px;
-  
+
   text-align: center;
   height: 200px;
   line-height: 200px;
@@ -90,4 +90,8 @@ h2{
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+h3 {
+  color: white;
+  font-size: 40px;
 }
