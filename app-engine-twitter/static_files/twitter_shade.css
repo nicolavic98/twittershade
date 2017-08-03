@@ -92,6 +92,8 @@ h2{
     1px 1px 0 #000;
 }
 ol {
+  text-align: center;
+  list-style-type: none;
   color: white;
   font-size: 40px;
 }
