@@ -94,10 +94,10 @@ class TwitterHandler(webapp2.RequestHandler):
             #self.response.write(embed)
             # html = twitter_stream.statuses.oembed(embed(tweet['html']))
 
-        if tweet['retweet_count'] > 10000:
-            tweet_text = tweet['text']
-            screen_name = tweet['user']['screen_name']
-            id_str = tweet['id_str']
+        # if tweet['retweet_count'] > 10000:
+        #     tweet_text = tweet['text']
+        #     screen_name = tweet['user']['screen_name']
+        #     id_str = tweet['id_str']
                 # self.response.write("<pre>THIS IS A TWEET::: "  +
                 # pprint.pformat(tweet_text) + '\n' +
                 # pprint.pformat(screen_name) + '\n' +
