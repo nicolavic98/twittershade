@@ -14,15 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import jinja2
-import os
-import webapp2
-import json
-import io
-import twitter
-import pprint
-from models import Response2
 from google.appengine.ext import ndb
+import io
+import jinja2
+import json
+from models import Response2
+import os
+import pprint
+from random import randint
+import twitter
+import webapp2
 
 
 jinja_environment = jinja2.Environment(
@@ -43,7 +44,7 @@ class AboutHandler(webapp2.RequestHandler):
         self.response.write(my_template.render())
 
 
-        
+
 class TwitterHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/twitter_shade.html')
