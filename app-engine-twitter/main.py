@@ -22,6 +22,7 @@ from models import Response2
 import os
 import pprint
 from random import choice
+from random import randint
 import twitter
 import webapp2
 from responses import below10k
@@ -90,6 +91,7 @@ class TwitterHandler(webapp2.RequestHandler):
 
         twitter_stream = twitter.Twitter(auth=auth)
         all_tweets = twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump")
+        rand_all_tweets = all_tweets[randint(0, 10)]
         render_data = {}
         #for tweet in all_tweets:
         #self.response.write(all_tweets[0])
@@ -104,7 +106,7 @@ class TwitterHandler(webapp2.RequestHandler):
             # html_list.append(embed)
             #self.response.write(embed)
             # html = twitter_stream.statuses.oembed(embed(tweet['html']))
-        retweet_count = all_tweets[0]['retweet_count']
+        retweet_count = rand_all_tweets['retweet_count']
 
         below = choice(below10k)
         ten = choice(tenKto25K)
@@ -135,7 +137,7 @@ class TwitterHandler(webapp2.RequestHandler):
             # pprint.pformat(id_str) + '\n' +
             # "\n------</pre>")
 
-        embed_html = twitter_stream.statuses.oembed(_id=all_tweets[0]['id_str'])['html']
+        embed_html = twitter_stream.statuses.oembed(_id=rand_all_tweets['id_str'])['html']
         render_data['embed_html'] = embed_html
         self.response.write(my_template.render(render_data))
 
