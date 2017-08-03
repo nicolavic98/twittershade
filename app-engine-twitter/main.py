@@ -146,8 +146,6 @@ class TwitterHandler(webapp2.RequestHandler):
 
 
 
-
-
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/about', AboutHandler),
