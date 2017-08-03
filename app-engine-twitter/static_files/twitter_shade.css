@@ -1,7 +1,7 @@
-
 #logo {
-  float:left;
+  float: left;
 }
+
 h1 {
   display: inline;
   font-family: 'Ubuntu', sans-serif;
@@ -11,29 +11,33 @@ h1 {
   color: #ccccff;
   margin: 10px 0 0 0;
 }
+
 #nav-bar {
-    float: right;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 20px;
-    width: 100px;
-    font-size: 20px;
-    background-color: #66b3ff;
+  float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+  width: 100px;
+  font-size: 20px;
+  background-color: #66b3ff;
 }
-#nav-bar li a{
-    display: block;
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
-    font-style: italic;
-    text-decoration: none;
-    padding: 14px 20px;
-  }
+
+#nav-bar li a {
+  display: block;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: italic;
+  text-decoration: none;
+  padding: 14px 20px;
+}
+
 #nav-bar li a:hover {
-    background-color: #cce6ff;
-    border-radius: 20px;
-  }
-#Tweet  {
+  background-color: #cce6ff;
+  border-radius: 20px;
+}
+
+#Tweet {
   margin: 0;
   padding: 0;
   border-radius: 20px;
@@ -44,7 +48,8 @@ h1 {
   height: 200px;
   line-height: 200px;
 }
-#Response  {
+
+#Response {
   margin: 0;
   padding: 0;
   border-radius: 20px;
@@ -61,6 +66,7 @@ h1 {
   vertical-align: middle;
   line-height: normal;
 }
+
 #Response_button {
   width: 50px;
   height: 50px;
