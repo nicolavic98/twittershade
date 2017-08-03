@@ -35,12 +35,9 @@
   </br>
   </br>
   <center>
-    {% for tweet in all_tweets: %}
-    <div id="Tweet"><span>
-    https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}
-
+    <div id = "Tweet"><span>
+      {{embed_html}}
     </span></div>
-    {% endfor %}
   </center>
   </br>
   </br>
