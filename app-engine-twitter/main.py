@@ -138,6 +138,9 @@ class TwitterHandler(webapp2.RequestHandler):
         embed_html = twitter_stream.statuses.oembed(_id=all_tweets[0]['id_str'])['html']
         render_data['embed_html'] = embed_html
         self.response.write(my_template.render(render_data))
+# class TwitterHandler(webapp2.RequestHandler):
+#     def get(self):
+#         my_template = jinja_environment.get_template('templates/submittedresponses.html')
 
 
 
@@ -148,5 +151,6 @@ class TwitterHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/about', AboutHandler),
-    ('/twitter', TwitterHandler)
+    ('/twitter', TwitterHandler),
+    # ('/subresponses', SubmittedHandler)
 ], debug=True)
