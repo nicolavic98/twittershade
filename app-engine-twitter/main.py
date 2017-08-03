@@ -62,7 +62,13 @@ class TwitterHandler(webapp2.RequestHandler):
         #
         # See https://dev.twitter.com/docs/auth/oauth for more information
         # on Twitter's OAuth implementation.
-
+        response_store = self.request.get("responser")
+        my_template = jinja_environment.get_template('templates/twitter_shade.html')
+        render_data = {}
+        render_data["responser"] = response_store
+        # self.response.write(my_template.render(render_data))
+        new_response = Response2(responser = response_store)
+        new_response.put()
 
         CONSUMER_KEY = 'RNGs9JfBd1dkwnGwkU5vZUGEa'
         CONSUMER_SECRET = 'cfIYI2x9bi3KBUMTY0NpjfWiZazIQiQY68HAZ3LBAp9qxQFxML'
@@ -83,7 +89,7 @@ class TwitterHandler(webapp2.RequestHandler):
         # Create a connection to the Streaming API
 
         twitter_stream = twitter.Twitter(auth=auth)
-        all_tweets = twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump")
+        all_tweets = twitter_stream.statuses.user_timeline(screen_name="the_jada_fire")
         render_data = {}
         #for tweet in all_tweets:
         #self.response.write(all_tweets[0])
