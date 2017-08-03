@@ -25,7 +25,17 @@
       </ul>
   </div></center> </br> </br></br> </br>
   <center>
+<<<<<<< HEAD
+    {% for tweet in all_tweets: %}
+    <div id = "Tweet"><span>
+    https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}
+
+    </span></div>
+    {% endfor %}
+  </center>
+=======
     <div id = "Tweet"><span>Tweet</span></div></center>
+>>>>>>> 917a0f6b3893abf87036b0160ad2749c27d2a07d
   </br></br>
   <center><button type="button" onclick="alert('Enjoy your New Reponse!')">Show me a response!</button></center> </br>
   <center><div id = "Response"><span>Response</span></div></center>
@@ -33,7 +43,7 @@
     <center>
       <form>
       Create a Response:<br>
-      <input type="text" name="firstname" value="">
+      <input type="text" name="firstname" value="Mickey">
       <br>
       <input type="submit" value="Submit">
     </form>

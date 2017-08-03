@@ -31,15 +31,13 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/twitter_shade.html')
         self.response.write(my_template.render())
-# class TwitterHandler(webapp2.RequestHandler):
-#     def get(self):
-#         self.response.write(Query)
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         my_template = jinja_environment.get_template('templates/about_page.html')
         self.response.write(my_template.render())
 class TwitterHandler(webapp2.RequestHandler):
     def get(self):
+        my_template = jinja_environment.get_template('templates/twitter_shade.html')
 
         # XXX: Go to http://twitter.com/apps/new to create an app and get values
         # for these credentials that you'll need to provide in place of these
@@ -71,14 +69,27 @@ class TwitterHandler(webapp2.RequestHandler):
         # Create a connection to the Streaming API
 
         twitter_stream = twitter.Twitter(auth=auth)
-        for tweet in twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump"):
-            if tweet['retweet_count'] > 10000:
-                self.response.write("<pre>THIS IS A TWEET::: "  +
-                pprint.pformat(tweet['text']) + '\n' +
-                pprint.pformat(tweet['user']['screen_name']) + '\n' +
-                pprint.pformat(tweet['id_str']) + '\n' +
+        all_tweets = twitter_stream.statuses.user_timeline(screen_name="realDonaldTrump")
+        #for tweet in all_tweets:
+        self.response.write(all_tweets[0])
+        tweet = all_tweets[0]
+        render_data = {}
+        render_data['id_str'] = tweet['id_str']
+        render_data['screen_name'] = tweet['user']['screen_name']
+        render_data['all_tweets'] = all_tweets
 
-                "\n------</pre>")
+            # if tweet['retweet_count'] > 10000:
+            #     tweet_text = tweet['text']
+            #     screen_name = tweet['user']['screen_name']
+            #     id_str = tweet['id_str']
+
+                # self.response.write("<pre>THIS IS A TWEET::: "  +
+                # pprint.pformat(tweet_text) + '\n' +
+                # pprint.pformat(screen_name) + '\n' +
+                # pprint.pformat(id_str) + '\n' +
+                # "\n------</pre>")
+
+        self.response.write(my_template.render(render_data))
 
 
 
