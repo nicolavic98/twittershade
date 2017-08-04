@@ -98,17 +98,25 @@ small {
 }
 
 .first {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
+  background-image: url("/resources/bautista.JPG");
+  height: 400px;
+  width: 1300px;
 }
 
 .second {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
+  background-image: url("/resources/bryson.JPG");
+  height: 400px;
+  width: 1300px;
 }
 
 .third {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
+  background-image: url("/resources/jarmula.JPG");
+  height: 400px;
+  width: 1300px;
 }
 
 .fourth {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png");
+  background-image: url("/resources/robinson.JPG");
+  height: 400px;
+  width: 1300px;
 }
